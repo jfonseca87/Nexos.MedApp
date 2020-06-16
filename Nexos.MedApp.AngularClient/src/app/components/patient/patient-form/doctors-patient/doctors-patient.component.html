@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="form-group col-2">
+        <select class="form-control" (change)="getValue($event)" >
+            <option value="0">Seleccione...</option>
+            <option *ngFor="let doctor of doctorsDrop" value="{{ doctor.doctorId }}"> {{ doctor.name }}</option>
+        </select>
+    </div>
+    <div style="display: inline;">
+        <button class="btn btn-success" [disabled]="doctorIdSelected == 0" (click)="savePatientDoctor()">Agregar Doctor</button>
+    </div>
+</div>
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Credencial No. </th>
+                <th> Nombres </th>
+                <th> Hospital </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of doctors">
+                <td> {{ doctor.credentialNumber }} </td>
+                <td> {{ doctor.name }}</td>
+                <td> {{ doctor.hospitalName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

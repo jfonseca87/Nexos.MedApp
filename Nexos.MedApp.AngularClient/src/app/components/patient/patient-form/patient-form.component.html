@@ -1,0 +1,61 @@
+<div>
+    <h1>Paciente - {{ patientName }}</h1>
+</div>
+<div>
+    <form [formGroup]="patientForm">
+        <div class="row pt-5 text-center">
+            <div class="form-group col-3">
+                <input type="text" class="form-control" formControlName="socialSecurityNumber"
+                    placeholder="No. Seguro Social">
+                <div class="text-left"
+                    *ngIf="patientForm.get('socialSecurityNumber').touched && patientForm.get('socialSecurityNumber').invalid"
+                    style="color:red">
+                    * Número Seguro Social requerido.
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <input type="text" class="form-control" formControlName="name" placeholder="Nombres">
+                <div class="text-left" *ngIf="patientForm.get('name').touched && patientForm.get('name').invalid"
+                    style="color:red">
+                    * Nombres es requerido.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-2">
+                <input type="text" class="form-control" formControlName="zipCode" placeholder="Código Postal">
+            </div>
+            <div class="form-group col-5">
+                <input type="text" class="form-control" formControlName="address" placeholder="Dirección">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-2">
+                <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Número Telefónico">
+                <div class="text-left"
+                    *ngIf="patientForm.get('phoneNumber').touched && patientForm.get('phoneNumber').invalid"
+                    style="color:red;">
+                    * Teléfono es requerido.
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <input type="text" class="form-control" formControlName="email" placeholder="Correo Electrónico">
+                <div *ngIf="patientForm.get('email').touched && patientForm.get('email').invalid" style="color:red;">
+                    <div *ngIf="patientForm.get('email').errors.required">
+                        Correo es requerido.
+                    </div>
+                    <div *ngIf="patientForm.get('email').errors.email">
+                        Correo Electrónico con formato inválido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right col-8 pb-5">
+            <button class="btn btn-secondary mr-3" (click)="pageBack()">Volver</button>
+            <button class="btn btn-success" [disabled]="!patientForm.valid" (click)="savePatient()">{{ textoBoton }}</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="patientId > 0">
+    <app-doctors-patient [patientId]="patientId"></app-doctors-patient>
+</div>
