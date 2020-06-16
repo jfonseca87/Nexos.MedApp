@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nexos.MedApp.Domain\Nexos.MedApp.Domain.csproj" />
+    <ProjectReference Include="..\Nexos.MedApp.Repository\Nexos.MedApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

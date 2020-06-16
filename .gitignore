@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Nexos.MedApp
+/Nexos.MedApp.API/bin/Debug/netcoreapp3.1
+/Nexos.MedApp.API/obj
+/Nexos.MedApp.Domain/bin/Debug/netstandard2.0
+/Nexos.MedApp.Domain/obj
+/Nexos.MedApp.Repository/bin/Debug/netstandard2.0
+/Nexos.MedApp.Repository/obj
+/Nexos.MedApp.Service/bin/Debug/netstandard2.0
+/Nexos.MedApp.Service/obj
